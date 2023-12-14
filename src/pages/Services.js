@@ -15,7 +15,7 @@ import {
 } from "../components/icons";
 import Navbar from "../components/Navbar";
 import CallHelpButtonComponent from "../components/CallHelpButton";
-import { CarouselWrapper, CardColumn, HomeContainer } from "./Home"
+import { CarouselWrapper, CardColumn, HomeContainer } from "./Home";
 
 const Services = () => {
   const cardData = [
@@ -36,26 +36,26 @@ const Services = () => {
 
   return (
     <>
-      <GardenLoftIcon />
-      <Navbar />
+      {/* <GardenLoftIcon />
+      <Navbar /> */}
       <HomeContainer>
-        <CustomPrevArrow  />
+        <CustomPrevArrow />
         <CustomNextArrow />
         <CarouselWrapper>
-        <Slider ref={sliderRef} {...settings}>
-          {cardData.map((card, index) => (
-            <CardColumn key={index}>
-              <ProfileCard
-                link={card.link}
-                icon={card.icon}
-                backgroundColor={card.backgroundColor}
-              />
-              <div className="profile-card-title">{card.title}</div>
-            </CardColumn>
-          ))}
-        </Slider>
+          <Slider ref={sliderRef} {...settings}>
+            {cardData.map((card, index) => (
+              <CardColumn key={index}>
+                <ProfileCard
+                  link={card.link}
+                  icon={card.icon}
+                  backgroundColor={card.backgroundColor}
+                />
+                <div className="profile-card-title">{card.title}</div>
+              </CardColumn>
+            ))}
+          </Slider>
         </CarouselWrapper>
-        <LocationIndicator currentPage={"services"} />
+        {/* <LocationIndicator currentPage={"services"} /> */}
       </HomeContainer>
       <CallHelpButtonComponent />
     </>
