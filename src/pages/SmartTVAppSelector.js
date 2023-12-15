@@ -1,7 +1,7 @@
 // SmartTVAppSelector.js
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 const AppSelectorContainer = styled.div`
   display: flex;
@@ -43,7 +43,6 @@ const AppItem = styled.div`
 `;
 
 const SmartTVAppSelector = () => {
-
   const handleAppSelect = (appName) => {
     navigate("/garden-loft-app/animation"); // Update with your actual homepage route
   };
@@ -53,10 +52,7 @@ const SmartTVAppSelector = () => {
   return (
     <AppSelectorContainer>
       <AppItem onClick={handleAppSelect}>
-        <img
-          src="garden loft-logo2.png"
-          alt="Garden Loft App"
-        />
+        <img src="garden loft-logo2.png" alt="Garden Loft App" />
       </AppItem>
     </AppSelectorContainer>
   );

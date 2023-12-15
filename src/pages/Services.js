@@ -4,16 +4,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProfileCard from "../components/ProfileCard/ProfileCard";
-import LocationIndicator from "../components/LocationIndicator";
+// import LocationIndicator from "../components/LocationIndicator";
 import { CustomNextArrow, CustomPrevArrow } from "../pages/SmartLoftPage";
 
 import {
   GroceryIcon,
   HaircutIcon,
   DryCleaningIcon,
-  GardenLoftIcon,
+  // GardenLoftIcon,
 } from "../components/icons";
-import Navbar from "../components/Navbar";
+
 import CallHelpButtonComponent from "../components/CallHelpButton";
 import { CarouselWrapper, CardColumn, HomeContainer } from "./Home";
 

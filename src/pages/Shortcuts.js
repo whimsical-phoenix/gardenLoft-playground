@@ -4,26 +4,36 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProfileCard from "../components/ProfileCard/ProfileCard";
 import {
-  GardenLoftIcon,
+  // GardenLoftIcon,
   LightbulbMultipleIcon,
   PhoneIcon,
   ThermostatIcon,
   TvIcon,
 } from "../components/icons";
 import CallHelpButtonComponent from "../components/CallHelpButton";
-import LocationIndicator from "../components/LocationIndicator";
-import Navbar from "../components/Navbar";
-import { CustomNextArrow, CustomPrevArrow, CarouselWrapper, CardColumn, HomeContainer } from "./Home"
+// import LocationIndicator from "../components/LocationIndicator";
+// import Navbar from "../components/Navbar";
+import {
+  CustomNextArrow,
+  CustomPrevArrow,
+  CarouselWrapper,
+  CardColumn,
+  HomeContainer,
+} from "./Home";
 
 const Shortcuts = () => {
-  const [disableHover, setDisableHover] = useState(false);
+  const [disableHover] = useState(false);
   const sliderRef = React.createRef();
 
   const cardData = [
     { icon: <TvIcon />, title: "watch TV" },
     { icon: <PhoneIcon />, title: "call Sue" },
-    { link: "/garden-loft-app/thermostat", icon: <ThermostatIcon />, title: "thermostat" },
-    { icon: <LightbulbMultipleIcon />, title: "all lights" }
+    {
+      link: "/garden-loft-app/thermostat",
+      icon: <ThermostatIcon />,
+      title: "thermostat",
+    },
+    { icon: <LightbulbMultipleIcon />, title: "all lights" },
   ];
 
   const settings = {
@@ -46,8 +56,8 @@ const Shortcuts = () => {
 
   return (
     <>
-      <GardenLoftIcon />
-      <Navbar />
+      {/* <GardenLoftIcon />
+      <Navbar /> */}
       <HomeContainer disableHover={disableHover}>
         <CarouselWrapper>
           <Slider ref={sliderRef} {...settings}>
@@ -65,7 +75,7 @@ const Shortcuts = () => {
           </Slider>
         </CarouselWrapper>
       </HomeContainer>
-      <LocationIndicator currentPage={"shortcuts"} />
+      {/* <LocationIndicator currentPage={"shortcuts"} /> */}
       <CallHelpButtonComponent />
     </>
   );

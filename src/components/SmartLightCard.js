@@ -1,23 +1,26 @@
 // SmartLightCard.js
-import React, { useEffect, useState } from 'react';
-import { Typography } from '@mui/material';
-import ProfileCard from './ProfileCard/ProfileCard';
-import { GardenLoftIcon, LightbulbFilledIcon } from './icons';
+import React, { useEffect, useState } from "react";
+import { Typography } from "@mui/material";
+import ProfileCard from "./ProfileCard/ProfileCard";
+import { LightbulbFilledIcon } from "./icons";
 
 const SmartLightCard = () => {
   const [socket, setSocket] = useState(null);
   const [manualToggle, setManualToggle] = useState(false);
-  const [switchState, setSwitchState] = useState('off'); // Set an initial value
+  const [switchState, setSwitchState] = useState("off"); // Set an initial value
   const [incrimentalId, setIncrimentalId] = useState(1);
   useEffect(() => {
     // Create WebSocket connection
-    const newSocket = new WebSocket("wss://iqbtrqvkgp7trilophztgmkfuggm9sb4.ui.nabu.casa/api/websocket");
-    newSocket.addEventListener('open', () => {
+    const newSocket = new WebSocket(
+      "wss://iqbtrqvkgp7trilophztgmkfuggm9sb4.ui.nabu.casa/api/websocket"
+    );
+    newSocket.addEventListener("open", () => {
       // Authenticate with Home Assistant
       newSocket.send(
         JSON.stringify({
           type: "auth",
-          access_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3ZTA5NDg5M2E3NGI0MDY1OWFmMzYzYTJkMDYzOGJhMiIsImlhdCI6MTcwMDc3NDU5MCwiZXhwIjoyMDE2MTM0NTkwfQ.VV19RhjO5Dsc01D3g21NV27WlJeioWmvowtibkqsQ5k", // Replace with your access token
+          access_token:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3ZTA5NDg5M2E3NGI0MDY1OWFmMzYzYTJkMDYzOGJhMiIsImlhdCI6MTcwMDc3NDU5MCwiZXhwIjoyMDE2MTM0NTkwfQ.VV19RhjO5Dsc01D3g21NV27WlJeioWmvowtibkqsQ5k", // Replace with your access token
         })
       );
       newSocket.send(
@@ -28,13 +31,15 @@ const SmartLightCard = () => {
           entity_id: "switch.thing2", // Replace with your switch entity ID
         })
       );
-      
     });
-   
-    newSocket.addEventListener('message', (event) => {
+
+    newSocket.addEventListener("message", (event) => {
       try {
         const receivedData = JSON.parse(event.data);
-        if (receivedData.type === "result" && Array.isArray(receivedData.result)) {
+        if (
+          receivedData.type === "result" &&
+          Array.isArray(receivedData.result)
+        ) {
           const resultArray = receivedData.result;
           for (let i = 0; i < resultArray.length; i++) {
             const currentEntry = resultArray[i];
@@ -58,11 +63,14 @@ const SmartLightCard = () => {
       }
       setManualToggle(false); // Make sure we know the button hasn't been pushed recently
     });
-    newSocket.addEventListener('message', (event) => {
+    newSocket.addEventListener("message", (event) => {
       try {
         const receivedData = JSON.parse(event.data);
-    
-        if (receivedData.type === "event" && receivedData.event.event_type === "state_changed") {
+
+        if (
+          receivedData.type === "event" &&
+          receivedData.event.event_type === "state_changed"
+        ) {
           const entityState = receivedData.event.data.new_state;
           if (entityState.entity_id === "switch.thing2") {
             const newSwitchState = entityState.state;
@@ -74,8 +82,8 @@ const SmartLightCard = () => {
       }
       setManualToggle(false);
     });
-    
-    newSocket.addEventListener('close', (event) => {
+
+    newSocket.addEventListener("close", (event) => {
       console.log("WebSocket connection closed:", event);
     });
     setSocket(newSocket);
@@ -88,6 +96,7 @@ const SmartLightCard = () => {
       socket.send(message);
     }
   };
+  // eslint-disable-next-line
   const getCurrentSwitchState = () => {
     const message = JSON.stringify({
       id: incrimentalId,
@@ -99,6 +108,7 @@ const SmartLightCard = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (!manualToggle) {
+        // eslint-disable-next-line
         getCurrentSwitchState();
       }
     }, 2000);
@@ -109,6 +119,7 @@ const SmartLightCard = () => {
   }, [manualToggle]); // Run when manualToggle changes
   // Call getCurrentSwitchState immediately when the page loads
   useEffect(() => {
+    // eslint-disable-next-line
     getCurrentSwitchState();
   }, []); // Run once on component mount
   const toggleSwitch = () => {
@@ -127,17 +138,18 @@ const SmartLightCard = () => {
   };
 
   return (
-      <>
-      <GardenLoftIcon />
+    <>
       <div className="profile-card-column">
         <ProfileCard
           borderRadius={"200px"}
           onClick={toggleSwitch}
-          backgroundColor={switchState === 'on' ? '#FFC100' : '#7F8181'}
-          icon={<LightbulbFilledIcon style={{size: "150px"}} />} />
+          backgroundColor={switchState === "on" ? "#FFC100" : "#7F8181"}
+          icon={<LightbulbFilledIcon style={{ size: "150px" }} />}
+        />
         <div className="profile-card-title">Floor Light</div>
         <Typography className="switch-state">{switchState}</Typography>
-      </div></>
+      </div>
+    </>
   );
 };
 

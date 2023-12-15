@@ -194,13 +194,13 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   ContactsIcon,
-  HealthIcon,
+  // HealthIcon,
   TvIcon,
   ServicesIcon,
-  SettingsIcon,
+  // SettingsIcon,
   ScheduleIcon,
-  ShortcutIcon,
-  GardenLoftIcon,
+  // ShortcutIcon,
+  // GardenLoftIcon,
 } from "../components/icons";
 import CallHelpButtonComponent from "../components/CallHelpButton";
 import BroadcastIcon from "../components/icons/BroadcastIcon";
@@ -316,7 +316,7 @@ const Home = () => {
   };
 
   const sliderRef = React.createRef();
-  const [disableHover, setDisableHover] = useState(false);
+  const [disableHover] = useState(false);
 
   return (
     <>
