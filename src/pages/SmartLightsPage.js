@@ -248,11 +248,15 @@ const SmartLightsPage = () => {
     sendMessage(message);
   };
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (!manualToggle) {
-        getCurrentSwitchState(); // No need to disable eslint for this line
-      }
-    }, 2000);
+    const intervalId = setInterval(
+      () => {
+        if (!manualToggle) {
+          getCurrentSwitchState(); // No need to disable eslint for this line
+        }
+      },
+      2000,
+      getCurrentSwitchState
+    );
 
     // Clean up the interval on component unmount
     return () => {
