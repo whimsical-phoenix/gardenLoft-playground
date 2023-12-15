@@ -301,10 +301,15 @@ const Home = () => {
       icon: <BroadcastIcon />,
       title: "control loft lights?",
     },
+    {
+      link: "/garden-loft-app/services",
+      icon: <ServicesIcon />,
+      title: "services",
+    },
   ];
 
   const settings = {
-    // centerMode: true,
+    centerMode: true,
     centerPadding: "0",
     infinite: true,
     speed: 500,
