@@ -219,7 +219,7 @@ export const HomeContainer = styled.div`
 export const CarouselWrapper = styled.div`
   margin: 0 auto;
   max-width: 2500px; /* Adjust the max-width as needed */
-  justify-content: space-around;
+  justify-content: center;
 `;
 
 export const CardColumn = styled.div`
