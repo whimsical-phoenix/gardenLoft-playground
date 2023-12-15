@@ -52,7 +52,7 @@ const Shortcuts = () => {
   useEffect(() => {
     // Set the initial slide to the middle programmatically
     sliderRef.current.slickGoTo(1);
-  }, [cardData.length]);
+  }, [cardData.length, sliderRef]);
 
   return (
     <>

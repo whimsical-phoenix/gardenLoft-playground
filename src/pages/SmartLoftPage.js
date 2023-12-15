@@ -10,23 +10,26 @@ import {
   ChevronRightIcon,
   ChevronLeftIcon,
   DoorIcon,
-  GardenLoftIcon,
   LampIcon,
   ThermostatIcon,
 } from "../components/icons";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import CallHelpButtonComponent from "../components/CallHelpButton";
-import LocationIndicator from "../components/LocationIndicator";
+// import LocationIndicator from "../components/LocationIndicator";
 import { CarouselWrapper, CardColumn, HomeContainer } from "./Home";
 
 export const CustomNextArrow = ({ onClick }) => (
-  <CustomArrowButton onClick={onClick} style={{ right: '210px', position: 'fixed' }}>
-    <ChevronRightIcon/>
+  <CustomArrowButton
+    onClick={onClick}
+    style={{ right: "210px", position: "fixed" }}>
+    <ChevronRightIcon />
   </CustomArrowButton>
 );
 
 export const CustomPrevArrow = ({ onClick }) => (
-  <CustomArrowButton onClick={onClick} style={{ left: '210px', position: 'fixed' }}>
+  <CustomArrowButton
+    onClick={onClick}
+    style={{ left: "210px", position: "fixed" }}>
     <ChevronLeftIcon />
   </CustomArrowButton>
 );
@@ -34,7 +37,7 @@ export const CustomPrevArrow = ({ onClick }) => (
 export const StyledTypography = styled.div`
   margin-top: 10px;
   font-weight: bold;
-  color: #2D3E5F;
+  color: #2d3e5f;
   font-size: 45px;
 
   &:hover {
@@ -44,23 +47,22 @@ export const StyledTypography = styled.div`
 `;
 
 export const CustomArrowButton = styled.div`
-width: 80px;
-height: 80px;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-z-index: 1; 
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 
-&:active {
-  transform: translateY(-50%), scale(0.95); // Add a scaling effect for the pressed state
-  box-shadow: 0 0 0; // Remove box shadow for a pressed effect
-}
+  &:active {
+    transform: translateY(-50%), scale(0.95); // Add a scaling effect for the pressed state
+    box-shadow: 0 0 0; // Remove box shadow for a pressed effect
+  }
 `;
-
 
 const SmartLoftPage = () => {
   const settings = {
@@ -74,20 +76,32 @@ const SmartLoftPage = () => {
   const sliderRef = React.createRef();
 
   const cardData = [
-    { link: "/garden-loft-app/smart-lights", icon: <LampIcon />, title: "smart lights" },
-    { link: "/garden-loft-app/thermostat", icon: <ThermostatIcon />, title: "thermostat" },
-    { link: "/garden-loft-app/door-lock", icon: <DoorIcon />, title: "door lock" },
+    {
+      link: "/garden-loft-app/smart-lights",
+      icon: <LampIcon />,
+      title: "smart lights",
+    },
+    {
+      link: "/garden-loft-app/thermostat",
+      icon: <ThermostatIcon />,
+      title: "thermostat",
+    },
+    {
+      link: "/garden-loft-app/door-lock",
+      icon: <DoorIcon />,
+      title: "door lock",
+    },
     // Add more cards here
   ];
 
   return (
     <>
-      <GardenLoftIcon />
-      <Navbar />
+      {/* <GardenLoftIcon />
+      <Navbar /> */}
       <HomeContainer>
         <CarouselWrapper>
-        <CustomPrevArrow  />
-            <CustomNextArrow />
+          <CustomPrevArrow />
+          <CustomNextArrow />
           <Slider ref={sliderRef} {...settings}>
             {cardData.map((card, index) => (
               <CardColumn key={index}>
@@ -101,7 +115,7 @@ const SmartLoftPage = () => {
             ))}
           </Slider>
         </CarouselWrapper>
-        <LocationIndicator currentPage={"loft controls"} />
+        {/* <LocationIndicator currentPage={"loft controls"} /> */}
         <CallHelpButtonComponent />
       </HomeContainer>
     </>

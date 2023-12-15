@@ -262,7 +262,6 @@ const SmartLightsPage = () => {
 
   // Call getCurrentSwitchState immediately when the page loads
   useEffect(() => {
-    // eslint-disable-next-line
     getCurrentSwitchState();
   }, [getCurrentSwitchState]); // Run once on component mount
 
