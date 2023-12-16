@@ -13,14 +13,14 @@ import {
 import Navbar from "../components/Navbar";
 import CallHelpButtonComponent from "../components/CallHelpButton";
 import LocationIndicator from "../components/LocationIndicator";
-import { CarouselWrapper, CardColumn, HomeContainer } from "./Home"
+import { CarouselWrapper, CardColumn, HomeContainer } from "./Home";
 import { CustomNextArrow, CustomPrevArrow } from "../pages/SmartLoftPage";
 
 const Entertainment = () => {
   const cardData = [
     { icon: <FilmIcon />, title: "watch TV" },
     { icon: <PeopleIcon />, title: "view activities" },
-    { icon: <MusicIcon />, title: "play music" },
+    { icon: <MusicIcon />, title: "play songs" },
     // Add more cards here
   ];
 
@@ -41,8 +41,8 @@ const Entertainment = () => {
       <GardenLoftIcon />
       <Navbar />
 
-      <CustomPrevArrow  />
-        <CustomNextArrow />
+      <CustomPrevArrow />
+      <CustomNextArrow />
       <HomeContainer>
         <CarouselWrapper>
           <Slider ref={sliderRef} {...settings}>
