@@ -8,7 +8,7 @@
 }
 
 #contacts {
-  width: 90%;
+  width: 80%;
   text-align: center;
   align-content: center;
   margin: auto;
@@ -41,13 +41,22 @@
   position: fixed;
 }
 
+/* change centering between carousel slides */
 .slick-slide > div {
   display: grid;
   place-items: center;
-  width: 90%;
+  width: 100%;
   margin-top: 50px;
   margin: auto;
   padding: 0px;
+}
+
+/* change centering of carousel div in relation to whole page */
+.slider {
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  padding-left: 90px;
 }
 
 .slide {
@@ -63,6 +72,7 @@
   padding: 4rem 3rem;
   background-color: #7f8181;
   border-radius: 3rem;
+  position: relative;
 }
 
 .slide h1 {
@@ -102,18 +112,27 @@
 }
 
 .next {
-  right: -6%;
-  top: 40%;
+  right: -8%;
+  top: 39%;
 }
 
 .prev {
-  left: -6%;
+  left: -8%;
   top: 40%;
 }
 
 svg.arrow-up {
-  margin-bottom: px;
-  padding: 0px;
+  margin-left: 10%;
+}
+
+/* Moving the prompt on bottom of contact carousel */
+.prompt h1 {
+  margin: 0;
+  font-size: 50px;
+  color: #2e3e5e;
+  position: absolute;
+  left: 48%;
+  top: 97%;
 }
 
 /* contacts.css or your custom stylesheet */

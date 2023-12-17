@@ -94,6 +94,109 @@
 
 // export default ProfileCard;
 
+// // ProfileCard.js
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import styled from "styled-components";
+// import "../ProfileCard/ProfileCard.css";
+
+// const ProfileCardLink = styled(Link)`
+//   text-decoration: none;
+// `;
+
+// const ProfileCardContainer = styled.div`
+//   width: 170px;
+//   height: 180px;
+//   background: ${(props) =>
+//     props.backgroundColor !== null && props.backgroundColor !== undefined
+//       ? props.backgroundColor
+//       : "#7F8181"};
+//   border-radius: 35px;
+//   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+//   margin: 50px;
+//   padding: 20px;
+//   text-align: center;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between; /* Use space-between to separate icon and title */
+//   transition: transform 0.3s, box-shadow 0.3s;
+
+//   &:hover {
+//     transform: ${(props) => (props.disableHover ? "none" : "scale(1.2)")};
+
+//     background: ${(props) =>
+//       props.disableHover
+//         ? ""
+//         : props.backgroundColor !== null && props.backgroundColor !== undefined
+//         ? props.backgroundColor
+//         : "#f3b717"};
+//     .icon-container {
+//       svg {
+//         fill: ${(props) => (props.disableHover ? "" : "#e9ebf8")};
+//       }
+//     }
+//   }
+// `;
+
+// const CardContent = styled.div`
+//   .icon-container {
+//     flex: 1;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+
+//     svg {
+//       fill: #f3b717;
+//     }
+//   }
+
+//   h3 {
+//     margin: 5px;
+//     color: black;
+//   }
+// `;
+
+// const TextBelowCard = styled.p`
+//   margin-top: 10px; /* Add margin to separate the text from the card */
+// `;
+
+// const ProfileCard = ({
+//   link,
+//   icon,
+//   onClick,
+//   title,
+//   textBelowCard,
+//   backgroundColor,
+//   borderRadius,
+//   disableHover,
+// }) => {
+//   const handleCardClick = () => {
+//     // Call the onClick prop when the card is clicked
+//     if (onClick) {
+//       onClick();
+//     }
+//   };
+
+//   return (
+//     <ProfileCardLink to={link}>
+//       <ProfileCardContainer
+//         className="profile-card-div"
+//         backgroundColor={backgroundColor}
+//         borderRadius={borderRadius}
+//         disableHover={disableHover}
+//         onClick={handleCardClick}>
+//         <CardContent>
+//           <div className="icon-container">{icon}</div>
+//           <h3>{title}</h3>
+//         </CardContent>
+//         <TextBelowCard>{textBelowCard}</TextBelowCard>
+//       </ProfileCardContainer>
+//     </ProfileCardLink>
+//   );
+// };
+
+// export default ProfileCard;
+
 // ProfileCard.js
 import React from "react";
 import { Link } from "react-router-dom";
@@ -105,38 +208,66 @@ const ProfileCardLink = styled(Link)`
 `;
 
 const ProfileCardContainer = styled.div`
-  width: 170px;
-  height: 180px;
+  width: ${(props) => (props.active ? "200px" : "170px")};
+  height: ${(props) => (props.active ? "210px" : "180px")};
   background: ${(props) =>
-    props.backgroundColor !== null && props.backgroundColor !== undefined
-      ? props.backgroundColor
-      : "#7F8181"};
-  border-radius: 35px;
+    props.active ? "#f3b717" : props.backgroundColor || "#7F8181"};
+  border-radius: ${(props) =>
+    props.active ? "50%" : props.borderRadius || "35px"};
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   margin: 50px;
   padding: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Use space-between to separate icon and title */
-  transition: transform 0.3s, box-shadow 0.3s;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.3s, background 0.3s, border-radius 0.3s;
 
-  &:hover {
-    transform: ${(props) => (props.disableHover ? "none" : "scale(1.2)")};
+  &.slick-center {
+    transform: scale(1.2);
+    background: #f3b717;
 
-    background: ${(props) =>
-      props.disableHover
-        ? ""
-        : props.backgroundColor !== null && props.backgroundColor !== undefined
-        ? props.backgroundColor
-        : "#f3b717"};
-    .icon-container {
-      svg {
-        fill: ${(props) => (props.disableHover ? "" : "#e9ebf8")};
-      }
+    .icon-container svg {
+      fill: white;
     }
   }
 `;
+
+// const ProfileCardContainer = styled.div`
+//   width: 170px;
+//   height: 180px;
+//   background: ${(props) =>
+//     props.backgroundColor !== null && props.backgroundColor !== undefined
+//       ? props.backgroundColor
+//       : "#7F8181"};
+//   border-radius: 35px;
+//   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+//   margin: 50px;
+//   padding: 20px;
+//   text-align: center;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   position: relative; /* Ensure TextBelowCard positioning is relative to this container */
+//   transition: transform 0.3s, box-shadow 0.3s;
+
+//   &:hover {
+//     transform: ${(props) => (props.disableHover ? "none" : "scale(1.2)")};
+
+//     background: ${(props) =>
+//       props.disableHover
+//         ? ""
+//         : props.backgroundColor !== null && props.backgroundColor !== undefined
+//         ? props.backgroundColor
+//         : "#f3b717"};
+//     .icon-container {
+//       svg {
+//         fill: ${(props) => (props.disableHover ? "" : "#e9ebf8")};
+//       }
+//     }
+//   }
+// `;
 
 const CardContent = styled.div`
   .icon-container {
@@ -146,18 +277,23 @@ const CardContent = styled.div`
     justify-content: center;
 
     svg {
-      fill: #f3b717;
+      fill: #383838;
     }
   }
 
   h3 {
     margin: 5px;
-    color: black;
+    color: #383838;
   }
 `;
 
-const TextBelowCard = styled.p`
-  margin-top: 10px; /* Add margin to separate the text from the card */
+const TextBelowCard = styled.h1`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  display: ${(props) => (props.active ? "block" : "none")};
 `;
 
 const ProfileCard = ({
@@ -169,6 +305,7 @@ const ProfileCard = ({
   backgroundColor,
   borderRadius,
   disableHover,
+  active,
 }) => {
   const handleCardClick = () => {
     // Call the onClick prop when the card is clicked
@@ -184,12 +321,13 @@ const ProfileCard = ({
         backgroundColor={backgroundColor}
         borderRadius={borderRadius}
         disableHover={disableHover}
-        onClick={handleCardClick}>
+        onClick={handleCardClick}
+        active={active}>
         <CardContent>
           <div className="icon-container">{icon}</div>
           <h3>{title}</h3>
         </CardContent>
-        <TextBelowCard>{textBelowCard}</TextBelowCard>
+        <TextBelowCard active={active}>{textBelowCard}</TextBelowCard>
       </ProfileCardContainer>
     </ProfileCardLink>
   );

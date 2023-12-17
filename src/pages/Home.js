@@ -184,6 +184,230 @@
 
 // Home.js
 // Home.js
+// import React, { useState } from "react";
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import styled from "styled-components";
+// import ProfileCard from "../components/ProfileCard/ProfileCard";
+// import {
+//   ChevronLeftIcon,
+//   ChevronRightIcon,
+//   ContactsIcon,
+//   // HealthIcon,
+//   TvIcon,
+//   ServicesIcon,
+//   // SettingsIcon,
+//   ScheduleIcon,
+//   // ShortcutIcon,
+//   // GardenLoftIcon,
+// } from "../components/icons";
+// import CallHelpButtonComponent from "../components/CallHelpButton";
+// import BroadcastIcon from "../components/icons/BroadcastIcon";
+// import Contacts from "../components/Contacts";
+
+// export const HomeContainer = styled.div`
+//   position: relative;
+//   top: 150px; /* Adjust the top value to position it below the "Call Help" button */
+//   left: 0;
+//   right: 0;
+//   display: flex;
+//   justify-content: center;
+//   min-height: 50vh; /* Adjust to ensure it takes the remaining height */
+//   text-align: center;
+// `;
+
+// export const CarouselWrapper = styled.div`
+//   margin: 0 auto;
+//   max-width: 2500px; /* Adjust the max-width as needed */
+//   justify-content: center;
+// `;
+
+// export const CardColumn = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   align-items: center;
+//   transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+
+//   &:hover {
+//     transform: scale(1.1);
+//     .icon-container {
+//       svg {
+//         fill: black;
+//       }
+//     }
+//   }
+// `;
+
+// const CustomArrowButton = styled.div`
+//   width: 80px;
+//   height: 80px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   z-index: 1;
+
+//   &:active {
+//     transform: translateY(-50%), scale(0.95);
+//   }
+// `;
+
+// const StyledProfileCard = styled(ProfileCard)`
+//   transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+//   display: flex;
+//   color: black;
+
+//   &:hover {
+//     transform: scale(1.1);
+//     .icon-container {
+//       svg {
+//         fill: black;
+//       }
+//     }
+//   }
+
+//   &.slick-center {
+//     transform: scale(1.5); // Adjust the scale as needed for the center card
+//     background: yellow; // Adjust the color as needed for the center card
+//   }
+// `;
+
+// export const CustomNextArrow = ({ onClick }) => (
+//   <CustomArrowButton onClick={onClick} style={{ right: -100 }}>
+//     <ChevronRightIcon />
+//   </CustomArrowButton>
+// );
+
+// export const CustomPrevArrow = ({ onClick }) => (
+//   <CustomArrowButton onClick={onClick} style={{ left: -100 }}>
+//     <ChevronLeftIcon />
+//   </CustomArrowButton>
+// );
+
+// // const Home = () => {
+// //   const cardData = [
+// //     {
+// //       link: "/garden-loft-app/entertainment",
+// //       icon: <TvIcon />,
+// //       title: "TV",
+// //     },
+// //     { icon: <ScheduleIcon />, title: "ACTIVITIES" },
+// //     {
+// //       link: "/garden-loft-app/services",
+// //       icon: <ServicesIcon />,
+// //       title: "ENTERTAINMENT",
+// //     },
+// //     { icon: <ContactsIcon />, title: "VIDEO CALL" },
+// //     {
+// //       link: "/garden-loft-app/smart-loft",
+// //       icon: <BroadcastIcon />,
+// //       title: "LIGHTS",
+// //     },
+// //     {
+// //       link: "/garden-loft-app/services",
+// //       icon: <ServicesIcon />,
+// //       title: "SETTINGS",
+// //     },
+// //   ];
+
+// //   const settings = {
+// //     centerMode: true,
+// //     centerPadding: "0",
+// //     infinite: true,
+// //     speed: 500,
+// //     slidesToShow: 5,
+// //     slidesToScroll: 1,
+// //     dots: true,
+// //     nextArrow: <CustomNextArrow data-clickable="true" />,
+// //     prevArrow: <CustomPrevArrow data-clickable="true" />,
+// //   };
+
+// //   const sliderRef = React.createRef();
+// //   const [disableHover] = useState(false);
+
+// //   return (
+// //     <>
+// //       {/* <GardenLoftIcon /> */}
+// //       <HomeContainer disableHover={disableHover}>
+// //         <CarouselWrapper>
+// //           <CustomNextArrow />
+// //           <CustomPrevArrow />
+// //           <Slider ref={sliderRef} {...settings}>
+// //             {cardData.map((card, index) => (
+// //               <CardColumn key={index}>
+// //                 <StyledProfileCard
+// //                   link={card.link}
+// //                   icon={card.icon}
+// //                   backgroundColor={card.backgroundColor}
+// //                   title={card.title} // Pass the title to the ProfileCard component
+// //                   textBelowCard={card.textBelowCard} // Pass the text below the card
+// //                 />
+// //               </CardColumn>
+// //             ))}
+// //           </Slider>
+// //         </CarouselWrapper>
+// //       </HomeContainer>
+// //       {/* <LocationIndicator currentPage={"home"} /> */}
+// //       <CallHelpButtonComponent />
+// //       <Contacts />
+// //     </>
+// //   );
+// // };
+
+// // export default Home;
+
+// const Home = () => {
+//   const [currentIndex, setCurrentIndex] = useState(0);
+
+//   const settings = {
+//     centerMode: true,
+//     centerPadding: "0",
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 5,
+//     slidesToScroll: 1,
+//     dots: true,
+//     nextArrow: <CustomNextArrow data-clickable="true" />,
+//     prevArrow: <CustomPrevArrow data-clickable="true" />,
+//     afterChange: (current) => setCurrentIndex(current),
+//   };
+
+//   return (
+//     <>
+//       <HomeContainer>
+//         <CarouselWrapper>
+//           <CustomNextArrow />
+//           <CustomPrevArrow />
+//           <Slider {...settings}>
+//             {cardData.map((card, index) => (
+//               <CardColumn key={index}>
+//                 <StyledProfileCard
+//                   icon={card.icon}
+//                   title={card.title}
+//                   textBelowCard={card.textBelowCard}
+//                   className={`${index === currentIndex ? "slick-center" : ""}`}
+//                 />
+//                 {index === currentIndex && (
+//                   <TextBelowCard>{card.textBelowCard}</TextBelowCard>
+//                 )}
+//               </CardColumn>
+//             ))}
+//           </Slider>
+//         </CarouselWrapper>
+//       </HomeContainer>
+//       <CallHelpButtonComponent />
+//       <Contacts />
+//     </>
+//   );
+// };
+
+// export default Home;
+
 import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -194,50 +418,36 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   ContactsIcon,
-  // HealthIcon,
   TvIcon,
   ServicesIcon,
-  // SettingsIcon,
   ScheduleIcon,
-  // ShortcutIcon,
-  // GardenLoftIcon,
 } from "../components/icons";
 import CallHelpButtonComponent from "../components/CallHelpButton";
-import BroadcastIcon from "../components/icons/BroadcastIcon";
 import Contacts from "../components/Contacts";
 
-export const HomeContainer = styled.div`
+const HomeContainer = styled.div`
   position: relative;
-  top: 150px; /* Adjust the top value to position it below the "Call Help" button */
+  top: 150px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
-  min-height: 50vh; /* Adjust to ensure it takes the remaining height */
+  min-height: 50vh;
   text-align: center;
 `;
 
-export const CarouselWrapper = styled.div`
+const CarouselWrapper = styled.div`
   margin: 0 auto;
-  max-width: 2500px; /* Adjust the max-width as needed */
+  max-width: 2500px;
   justify-content: center;
 `;
 
-export const CardColumn = styled.div`
+const CardColumn = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-
-  &:hover {
-    transform: scale(1.1);
-    .icon-container {
-      svg {
-        fill: black;
-      }
-    }
-  }
 `;
 
 const CustomArrowButton = styled.div`
@@ -263,7 +473,6 @@ const StyledProfileCard = styled(ProfileCard)`
   color: black;
 
   &:hover {
-    // background: yellow;
     transform: scale(1.1);
     .icon-container {
       svg {
@@ -271,46 +480,77 @@ const StyledProfileCard = styled(ProfileCard)`
       }
     }
   }
+
+  &.slick-center {
+    transform: scale(1.5);
+    background: yellow;
+    .icon-container {
+      svg {
+        fill: #000; /* Change the icon color for the center card */
+      }
+    }
+  }
 `;
 
-export const CustomNextArrow = ({ onClick }) => (
+const CustomNextArrow = ({ onClick }) => (
   <CustomArrowButton onClick={onClick} style={{ right: -100 }}>
     <ChevronRightIcon />
   </CustomArrowButton>
 );
 
-export const CustomPrevArrow = ({ onClick }) => (
+const CustomPrevArrow = ({ onClick }) => (
   <CustomArrowButton onClick={onClick} style={{ left: -100 }}>
     <ChevronLeftIcon />
   </CustomArrowButton>
 );
 
-const Home = () => {
-  const cardData = [
-    {
-      link: "/garden-loft-app/entertainment",
-      icon: <TvIcon />,
-      title: "TV",
-    },
-    { icon: <ScheduleIcon />, title: "ACTIVITIES" },
-    {
-      link: "/garden-loft-app/services",
-      icon: <ServicesIcon />,
-      title: "ENTERTAINMENT",
-    },
-    { icon: <ContactsIcon />, title: "VIDEO CALL" },
-    {
-      link: "/garden-loft-app/smart-loft",
-      icon: <BroadcastIcon />,
-      title: "LIGHTS",
-    },
-    {
-      link: "/garden-loft-app/services",
-      icon: <ServicesIcon />,
-      title: "SETTINGS",
-    },
-  ];
+const TextBelowCard = styled.h1`
+  margin: 10px;
+  font-size: 46px;
+  color: #2e3e5e;
+  position: initial;
 
+  display: flex;
+`;
+
+const cardData = [
+  {
+    link: "/garden-loft-app/entertainment",
+    icon: <TvIcon />,
+    title: "TV",
+    textBelowCard: "Watch TV?",
+  },
+  {
+    icon: <ScheduleIcon />,
+    title: "ACTIVITIES",
+    textBelowCard: "Join an Activity?",
+  },
+  {
+    link: "/garden-loft-app/services",
+    icon: <ServicesIcon />,
+    title: "ENTERTAINMENT",
+    textBelowCard: "Watch Entertainment?",
+  },
+  {
+    link: "/garden-loft-app/services",
+    icon: <ServicesIcon />,
+    title: "SETTINGS",
+    textBelowCard: "Change Settings?",
+  },
+  {
+    icon: <ContactsIcon />,
+    title: "VIDEO CALL",
+    textBelowCard: "Make a Video Call?",
+  },
+  {
+    link: "/garden-loft-app/smart-loft",
+    icon: <ContactsIcon />,
+    title: "LIGHTS",
+    textBelowCard: "Change Lights?",
+  },
+];
+
+const Home = () => {
   const settings = {
     centerMode: true,
     centerPadding: "0",
@@ -321,34 +561,45 @@ const Home = () => {
     dots: true,
     nextArrow: <CustomNextArrow data-clickable="true" />,
     prevArrow: <CustomPrevArrow data-clickable="true" />,
+    beforeChange: (current, next) => {
+      // Disable hover effect for all cards
+      setDisableHover(true);
+    },
+    afterChange: (current) => {
+      // Enable hover effect for the center card
+      setDisableHover(false);
+      // Update the index of the center card
+      setCenterCardIndex(current);
+    },
   };
 
-  const sliderRef = React.createRef();
-  const [disableHover] = useState(false);
+  const [disableHover, setDisableHover] = useState(false);
+  const [centerCardIndex, setCenterCardIndex] = useState(0);
 
   return (
     <>
-      {/* <GardenLoftIcon /> */}
       <HomeContainer disableHover={disableHover}>
         <CarouselWrapper>
           <CustomNextArrow />
           <CustomPrevArrow />
-          <Slider ref={sliderRef} {...settings}>
+          <Slider {...settings}>
             {cardData.map((card, index) => (
               <CardColumn key={index}>
                 <StyledProfileCard
                   link={card.link}
                   icon={card.icon}
-                  backgroundColor={card.backgroundColor}
-                  title={card.title} // Pass the title to the ProfileCard component
-                  textBelowCard={card.textBelowCard} // Pass the text below the card
+                  title={card.title}
+                  // textBelowCard={card.textBelowCard}
+                  active={index === centerCardIndex}
                 />
+                {index === centerCardIndex && (
+                  <TextBelowCard>{card.textBelowCard}</TextBelowCard>
+                )}
               </CardColumn>
             ))}
           </Slider>
         </CarouselWrapper>
       </HomeContainer>
-      {/* <LocationIndicator currentPage={"home"} /> */}
       <CallHelpButtonComponent />
       <Contacts />
     </>
