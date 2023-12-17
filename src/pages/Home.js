@@ -259,7 +259,8 @@ const CustomArrowButton = styled.div`
 
 const StyledProfileCard = styled(ProfileCard)`
   transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-  display: block;
+  display: flex;
+  color: black;
 
   &:hover {
     // background: yellow;
@@ -289,24 +290,24 @@ const Home = () => {
     {
       link: "/garden-loft-app/entertainment",
       icon: <TvIcon />,
-      title: "Watch TV?",
+      title: "TV",
     },
-    { icon: <ScheduleIcon />, title: "Activity" },
+    { icon: <ScheduleIcon />, title: "ACTIVITIES" },
     {
       link: "/garden-loft-app/services",
       icon: <ServicesIcon />,
-      title: "services",
+      title: "ENTERTAINMENT",
     },
-    { icon: <ContactsIcon />, title: "Make a call?" },
+    { icon: <ContactsIcon />, title: "VIDEO CALL" },
     {
       link: "/garden-loft-app/smart-loft",
       icon: <BroadcastIcon />,
-      title: "control loft lights?",
+      title: "LIGHTS",
     },
     {
       link: "/garden-loft-app/services",
       icon: <ServicesIcon />,
-      title: "services",
+      title: "SETTINGS",
     },
   ];
 
@@ -339,8 +340,9 @@ const Home = () => {
                   link={card.link}
                   icon={card.icon}
                   backgroundColor={card.backgroundColor}
+                  title={card.title} // Pass the title to the ProfileCard component
+                  textBelowCard={card.textBelowCard} // Pass the text below the card
                 />
-                <div className="profile-card-title">{card.title}</div>
               </CardColumn>
             ))}
           </Slider>
