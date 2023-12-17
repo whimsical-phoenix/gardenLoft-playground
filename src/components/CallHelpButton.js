@@ -16,13 +16,14 @@ const StyledButtonAlignment = styled(Typography)`
 const CallHelpButton = styled.button`
   margin-top: 30px;
   padding: 10px;
-  background-color: ${({ active }) => (active ? "#ff4d4d" : "#59acce")};
+
+  // background-color: ${({ active }) => (active ? "#ff4d4d" : "#59acce")};
   color: ${({ active }) => (active ? "white" : "#2d3e5f")};
   border: none;
   border-radius: 20px;
   cursor: pointer;
   font-size: 2rem;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   font-family: "Roboto";
   transition: background-color 0.3s ease, transform 0.2s ease;
 
@@ -136,7 +137,7 @@ const CallHelpButtonComponent = ({ onClick }) => {
           fontWeight="700"
           style={{ display: "flex", alignItems: "center", padding: "0 20px" }}>
           <TelephoneIcon size={60} />
-          <div style={{ paddingLeft: "10px" }}>Call Help</div>
+          <div style={{ paddingLeft: "10px" }}>CALL SUSAN?</div>
         </Typography>
       </CallHelpButton>
 
