@@ -28,10 +28,11 @@
 }
 
 .profile-card-title {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   font-weight: bold;
-  color: #2D3E5F;
+  color: #2d3e5f;
   font-size: 45px;
+  /* display: flex; */
 }
 
 .icon-container {
@@ -42,8 +43,8 @@
 }
 
 .profile-card svg {
-  width: 150px; /* Set the width of your SVG icons */
-  height: 150px; /* Set the height of your SVG icons */
+  width: 100px; /* Set the width of your SVG icons */
+  height: 100px; /* Set the height of your SVG icons */
   fill: white; /* Set the fill color of your SVG icons */
 }
 

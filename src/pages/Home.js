@@ -204,6 +204,7 @@ import {
 } from "../components/icons";
 import CallHelpButtonComponent from "../components/CallHelpButton";
 import BroadcastIcon from "../components/icons/BroadcastIcon";
+import Contacts from "../components/Contacts";
 
 export const HomeContainer = styled.div`
   position: relative;
@@ -212,7 +213,7 @@ export const HomeContainer = styled.div`
   right: 0;
   display: flex;
   justify-content: center;
-  min-height: 70vh; /* Adjust to ensure it takes the remaining height */
+  min-height: 50vh; /* Adjust to ensure it takes the remaining height */
   text-align: center;
 `;
 
@@ -258,6 +259,7 @@ const CustomArrowButton = styled.div`
 
 const StyledProfileCard = styled(ProfileCard)`
   transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  display: block;
 
   &:hover {
     // background: yellow;
@@ -346,6 +348,7 @@ const Home = () => {
       </HomeContainer>
       {/* <LocationIndicator currentPage={"home"} /> */}
       <CallHelpButtonComponent />
+      <Contacts />
     </>
   );
 };
