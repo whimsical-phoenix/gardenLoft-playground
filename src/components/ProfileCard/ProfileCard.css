@@ -29,6 +29,7 @@
 
 .profile-card-title {
   /* margin-top: 10px; */
+  display: flex;
   font-weight: bold;
   color: #2d3e5f;
   font-size: 45px;

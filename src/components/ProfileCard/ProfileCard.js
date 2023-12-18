@@ -213,7 +213,7 @@ const ProfileCardContainer = styled.div`
   background: ${(props) =>
     props.active ? "#f3b717" : props.backgroundColor || "#7F8181"};
   border-radius: ${(props) =>
-    props.active ? "50%" : props.borderRadius || "35px"};
+    props.active ? "30%" : props.borderRadius || "35px"};
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   margin: 50px;
   padding: 20px;
@@ -228,8 +228,12 @@ const ProfileCardContainer = styled.div`
     transform: scale(1.2);
     background: #f3b717;
 
+    h3 {
+      color: #2f302e;
+    }
+
     .icon-container svg {
-      fill: white;
+      fill: #2f302e;
     }
   }
 `;
@@ -275,15 +279,16 @@ const CardContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 7px;
 
     svg {
-      fill: #383838;
+      fill: #f3b717;
     }
   }
 
   h3 {
     margin: 5px;
-    color: #383838;
+    color: #f3b717;
   }
 `;
 
@@ -317,7 +322,7 @@ const ProfileCard = ({
   return (
     <ProfileCardLink to={link}>
       <ProfileCardContainer
-        className="profile-card-div"
+        className={`profile-card-div ${active ? "slick-center" : ""}`}
         backgroundColor={backgroundColor}
         borderRadius={borderRadius}
         disableHover={disableHover}
