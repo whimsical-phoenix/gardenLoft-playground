@@ -419,9 +419,10 @@ import CallHelpButtonComponent from "../components/CallHelpButton";
 import Contacts from "../components/Contacts";
 import { GiFilmSpool } from "react-icons/gi";
 import { FaPhoneAlt } from "react-icons/fa";
-import { GrYoga } from "react-icons/gr";
+// import { GrYoga } from "react-icons/gr";
 import { IoSettings } from "react-icons/io5";
 import { FaLightbulb } from "react-icons/fa";
+import { MdOutlineSportsMartialArts } from "react-icons/md";
 
 const HomeContainer = styled.div`
   position: relative;
@@ -520,7 +521,7 @@ const cardData = [
     textBelowCard: "Watch TV?",
   },
   {
-    icon: <GrYoga size={150} color={"#f3b717"} />,
+    icon: <MdOutlineSportsMartialArts size={150} />,
     title: "ACTIVITIES",
     textBelowCard: "Join an Activity?",
   },
