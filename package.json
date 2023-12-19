@@ -1,6 +1,5 @@
 {
-  "name": "gardenLoft-playground
-",
+  "name": "garden-loft-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,7 +23,7 @@
     "use-sound": "^4.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://github.com/whimsical-phoenix/gardenLoft-playground.git",
+  "homepage": "https://juliannetan.github.io/garden-loft-app",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
