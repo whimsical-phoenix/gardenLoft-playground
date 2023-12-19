@@ -559,7 +559,7 @@ const Home = () => {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
-    dots: true,
+    // dots: true,
     nextArrow: <CustomNextArrow data-clickable="true" />,
     prevArrow: <CustomPrevArrow data-clickable="true" />,
     beforeChange: (current, next) => {

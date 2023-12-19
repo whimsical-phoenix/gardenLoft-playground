@@ -1,23 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ThermostatCard from "./components/ThermostatCard";
+import { BrowserRouter as Router } from "react-router-dom";
+// import ThermostatCard from "./components/ThermostatCard";
 import Home from "./pages/Home";
-import Services from "./pages/Services";
-import DoorLockPage from "./pages/DoorLockPage";
-import Entertainment from "./pages/Entertainment";
-import SmartLoftPage from "./pages/SmartLoftPage";
-import SmartLightsPage from "./pages/SmartLightsPage";
-import QuotesPage from "./pages/QuotesPage";
-import WelcomeScreen from "./components/WelcomeScreen";
-import SmartLightCard from "./components/SmartLightCard";
-import AnimationPage from "./pages/AnimationPage";
-import Shortcuts from "./pages/Shortcuts";
-import SmartTVAppSelector from "./pages/SmartTVAppSelector";
+// import Services from "./pages/Services";
+// import DoorLockPage from "./pages/DoorLockPage";
+// import Entertainment from "./pages/Entertainment";
+// import SmartLoftPage from "./pages/SmartLoftPage";
+// import SmartLightsPage from "./pages/SmartLightsPage";
+// import QuotesPage from "./pages/QuotesPage";
+// import WelcomeScreen from "./components/WelcomeScreen";
+// import SmartLightCard from "./components/SmartLightCard";
+// import AnimationPage from "./pages/AnimationPage";
+// import Shortcuts from "./pages/Shortcuts";
+// import SmartTVAppSelector from "./pages/SmartTVAppSelector";, Route, Routes
 
 function App() {
   return (
     <Router>
-      <Routes>
+      <Home />
+      {/* <Routes>
         <Route path="/garden-loft-app/home" element={<Home />} />
         <Route path="/garden-loft-app/door-lock" element={<DoorLockPage />} />
         <Route path="/garden-loft-app/shortcuts" element={<Shortcuts />} />
@@ -31,7 +32,7 @@ function App() {
         <Route path="/garden-loft-app/welcome" element={<WelcomeScreen />} />
         <Route path="/garden-loft-app/animation" element={<AnimationPage />} />
         <Route path="/garden-loft-app/" element={<SmartTVAppSelector />} />
-      </Routes>
+      </Routes> */}
     </Router>
   );
 }
