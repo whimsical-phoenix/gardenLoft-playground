@@ -279,7 +279,7 @@ const CardContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 7px;
+    padding: 10px;
 
     svg {
       fill: #f3b717;
@@ -294,7 +294,7 @@ const CardContent = styled.div`
 
 const TextBelowCard = styled.h1`
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;

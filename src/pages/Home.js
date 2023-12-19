@@ -509,7 +509,6 @@ const TextBelowCard = styled.h1`
   font-size: 46px;
   color: #2e3e5e;
   position: initial;
-
   display: flex;
 `;
 
@@ -585,6 +584,7 @@ const Home = () => {
             {cardData.map((card, index) => (
               <CardColumn key={index}>
                 <StyledProfileCard
+                  display={"block"}
                   link={card.link}
                   icon={card.icon}
                   title={card.title}

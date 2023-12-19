@@ -166,7 +166,7 @@ const CarouselContent = styled.div`
 const CarouselCard = styled.div`
   flex: 0 0 20%; /* Display five cards at a time */
   margin: 0 10px;
-  padding: 20px;
+  padding: 30px;
   background-color: ${(props) => (props.active ? "#f3b717" : "gray")};
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
