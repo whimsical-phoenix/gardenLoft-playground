@@ -51,31 +51,6 @@
   padding: 0px;
 }
 
-div.slick-slide:nth-child(7) > div:nth-child(1) > div:nth-child(1) {
-  width: 100%;
-  display: block;
-}
-div.slick-slide:nth-child(8) > div:nth-child(1) > div:nth-child(1) {
-  width: 100%;
-  display: block;
-}
-div.slick-slide:nth-child(9) > div:nth-child(1) > div:nth-child(1) {
-  width: 100%;
-  display: block;
-}
-div.slick-slide:nth-child(6) > div:nth-child(1) > div:nth-child(1) {
-  width: 100%;
-  display: block;
-}
-div.slick-slide:nth-child(10) > div:nth-child(1) > div:nth-child(1) {
-  width: 100%;
-  display: block;
-}
-div.slick-slide:nth-child(7) > div:nth-child(1) > div:nth-child(1) {
-  width: 100%;
-  display: block;
-}
-
 /* change centering of carousel div in relation to whole page */
 .slider {
   margin: auto;
